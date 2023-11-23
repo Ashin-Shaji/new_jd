@@ -176,4 +176,5 @@ else:
         top_5_matches = final_data[
             ['Sl.No', 'Name','Matching_Score', 'Experience', 'Matched_Skills', 'Additional_skills', 'Phone Number', 'Email id']]
         # final_data.to_csv('final_fnsh.csv',index=False)
-        top_5_matches.head(5)
+        top_5_matches=top_5_matches.head(5)
+        top_5_matches
