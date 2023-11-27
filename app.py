@@ -177,14 +177,4 @@ else:
             ['Sl.No', 'Name','Matching_Score', 'Experience', 'Matched_Skills', 'Additional_skills', 'Phone Number', 'Email id']]
         # final_data.to_csv('final_fnsh.csv',index=False)
         top_5_matches=top_5_matches.head(5)
-        #top_5_matches
-
-
-        base_url = "https://storage.googleapis.com/demo_jd_bucket-1/GCP/"
-        # Apply a function to the 'Unique_ID' column of the dataframe
-        top_5_matches['View'] = top_5_matches['Unique_ID'].apply(lambda x: base_url + x + '.pdf' if x.startswith('UN') else x)
-        from IPython.display import display, HTML
-        # Convert the 'View' column into HTML links
-        top_5_matches['View'] = top_5_matches.apply(lambda row: f'<a href="{row["View"]}" target="_blank">{row["Unique_ID"]}</a>', axis=1)
-        # Convert the entire DataFrame to HTML, and then display it
-        display(HTML(top_5_matches.to_html(escape=False)))
+        top_5_matches
